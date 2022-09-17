@@ -1,0 +1,337 @@
+// reset 
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+}
+ol,ul,li {
+    list-style: none;
+}
+a {
+    text-decoration:none;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+:root {
+    --c-main: #351c75;
+    --c-secondary: #e69138;
+    --c-dark: #333;
+    --c-background: #fce5cd;
+    --c-background-dark: #f7d7b5;
+}
+// extend
+.border-right-p {
+    height: 50px;
+    font-size: 20px;
+    border-left: 7px solid var(--c-secondary);
+    padding-left: 20px;
+    font-weight: 250;
+}
+.language-shell {
+    width: 100%;
+    height: 60px;
+    background-color: #2d2d2d;
+    border-radius: 4px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    p {
+        padding-left: 20px;
+        color: #ccc;
+        span {
+            color: #f08d49;
+        }
+    }
+    .cdn-usage { // p
+        span {
+            color: #ccc;
+        }
+        .tag {
+            color: #e2777a;
+        }
+        .value {
+            color: #7ec;
+        }
+    }
+}
+.container {
+    width: 100vw;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    color: var(--c-main);
+    }
+
+    h1 {
+        font-size: 3.998rem;
+      }
+      
+      h2 {
+        font-size: 1.999rem;
+      }
+      
+      h3 {
+        font-size: 1.414rem;
+      }
+      
+      h4 {
+        font-size: 1.25rem;
+      }
+      
+      h5 {
+        font-size: 1rem;
+      }
+    .intro {
+        width: 100%;
+        height: 95vh;
+        display: flex;
+        .intro-left {
+            width: 87.5%;
+            height: 100%;
+            background-color: var(--c-background);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            h1 {
+                color: var(--c-main);
+                font-size: 4rem;
+            }
+            h3 {
+                color: var(--c-secondary);
+                font-size: 1.3333rem;
+            }
+            p {
+                position: absolute;
+                top: 85%;
+                font-size: 0.75rem;
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .intro-right {
+            width: 12.5%;
+            height: 100%;
+            overflow: scroll;
+            background-color: var(--c-background-dark);
+            ul {
+                margin-top: 10%;
+                width: 90%;
+                margin-left: 5%;
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    margin-top: 2.5%;
+                    a {
+                        font-size: 16px;
+                        color: rgba(0,0,0,0.6);
+                    }
+                }
+                h2 {
+                    font-size: 18px;
+                    width: 100%;
+                    margin-bottom: 1.5%;
+                }
+            }
+            & ul:first-child {
+                margin-top: 50px;
+            }
+        }
+    }
+    main {
+        width: 100%;
+        .documentation {
+            width: 100%;
+            height: 5vh;
+            background-color: var(--c-main);
+            display: flex;
+            align-items: center;
+            a {
+                font-size: 1.3333rem;
+                padding-left: 15%;
+                color: var(--c-secondary);                
+            }
+        }
+        .main-section {
+            width: 100%;
+            display: flex;
+            .right-section {
+                width: 25%;
+                background-color: var(--c-background-dark);
+                position: relative;
+                .GitHubLogo-section {
+                    width: 30%;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    img {
+                        padding-left:25px;
+                    }
+                    span {
+                        margin-left: 10px;
+                        font-weight: 250;
+                    }
+
+                }
+                ul {
+                    width: 100%;
+                    position: sticky;
+                    top: 0px;
+                    left: 0px;
+                    padding-top: 15px;
+                    li {
+                        padding-left:25px;
+                        a {
+                            text-decoration: underline;
+                            display: block;
+                            margin-top: 10px;
+                        }
+                    }   
+                }
+            }
+            .left-section {
+                width: 75%;
+                height: 100%;
+                .container {
+                    width: 73%;
+                    margin-left: 25%;
+                    height: 100%;
+                    blockquote {
+                        padding-top: 25px;
+                        width: 100%;
+                        
+                    }
+                    & >  blockquote + p{
+                        margin-top: 20px;
+                        height: 50px;
+                        font-size: 20px;
+                        font-weight: 250;
+                    }
+                    .edit-github {
+                        height: 80px;
+                        margin-top:10px;
+                        border-bottom: 1px solid #eaeaea;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        a {
+                            color: var(--c-main);
+                            text-decoration: underline;
+                            font-size: 14px;
+                        }
+                    }
+                    section {
+                        margin-top: 50px;
+                        .content {
+                            margin-top: 20px;
+                        }   
+                    }
+                    .installation-useage {
+                        .content {
+                            .language-shell {
+                                @extend .language-shell;
+                            }
+                            .language-shell-cdn {
+                                @extend .language-shell;
+                                height: 120px;
+                            }
+                            .basic-usage-text {
+                                span {
+                                    background-color: var(--c-background);
+                                }
+                            }
+                            .language-shell-cdn-random {
+                                @extend .language-shell-cdn;
+                                height: 50px;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .border-right-p {
+                                a {
+                                    text-decoration: underline;
+                                    color: var(--c-main);
+                                }
+                            }
+                            .using-keyframes {
+                                h3 {
+                                    span {
+                                        background-color: var(--c-background);
+                                    }
+                                }
+                            }
+                            .using-keyframes-under {
+                                span {
+                                    background-color: var(--c-background);
+                                }
+                            }
+                            .language-shell-cdn-using-keyframes {
+                                @extend .language-shell;
+                                height: 140px;
+                                .cdn-usage {
+                                    .selecter {
+                                        color: #cc99cd;
+                                    }
+                                    .prop {
+                                        color: #f8c555;
+                                    }
+                                    .commentLine {
+                                        color: #999;
+                                    }
+                                }
+                            }
+                            .animation-timing-text {
+                                span {
+                                    background-color: var(--c-background);
+                                }
+                            }
+                            .language-shell-cdn-custom-prop {
+                                @extend .language-shell-cdn-using-keyframes;
+                                height: 180px;
+                            }
+                            .language-shell-cdn-function {
+                                @extend .language-shell-cdn;
+                                height: 120px;
+                                .cdn-usage {
+                                    .functions {
+                                        color: #f08d49;
+                                    }
+                                    .paramater {
+                                        color: #7ec699;
+                                    }
+                                    .commentLine {
+                                        color: #999;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: var(--c-main);
+        width: 100%;
+        height: 54px;
+        p {
+            color: white;
+            font-weight: 350;
+            font-size: 14px;
+            line-height: 54px;
+            text-align: center;
+            a {
+                color: white;
+                text-decoration: underline;
+            }
+        }
+    }
+}
